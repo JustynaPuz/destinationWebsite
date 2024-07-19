@@ -1,0 +1,35 @@
+/* src/css/HeaderComponent.css */
+
+/* Navbar styles */
+.navbar {
+    background-color: #343a40; 
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff; /* White text */
+    font-size: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #d4d4d4; /* Lighter color on hover */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px; /* Space between items */
+}
+
+/* Ensure the navbar spans the full width */
+.navbar-expand-md {
+    width: 100%;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+/* Custom header styles */
+header {
+   
+}

@@ -1,0 +1,70 @@
+/* src/css/WelcomeComponent.css */
+
+.welcome-container {
+    background-image: url('../resources/welcomebackground.jpg'); /* Ścieżka do zdjęcia */
+    background-size: cover; 
+    background-position: center;
+    height: 91vh; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    color: rgb(2, 2, 2);
+    text-align: center; 
+    padding-top: 50px; 
+}
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    width: 300px; 
+    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+    margin-top: 20px; 
+    color: rgb(249, 245, 245);
+}
+
+h1 {
+    color: rgb(8, 8, 8);
+    padding: 20px;
+    font-size: 60px;
+    border-radius: 10px;
+    margin-bottom: 20px; 
+}
+
+.container:first-of-type {
+    margin-top: 20px; 
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%; 
+    padding: 8px; 
+    margin: 8px 0;
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+}
+
+
+button.btn-success {
+    width: 100%; /* Szerokość przycisku równa szerokości pól */
+    padding: 10px; /* Padding przycisku */
+    margin: 8px 0; /* Margines górny i dolny */
+    font-size: 30px; /* Wielkość czcionki przycisku */
+    cursor: pointer; /* Kursor wskazujący */
+    transition: background-color 0.3s; /* Animacja zmiany koloru */
+    border-radius: 4px; /* Zaokrąglenie rogów przycisku */
+}
+
+button.btn-success:hover {
+    background-color: #2d8632; /* Darker shade of green when hovered */
+}
+
+button.btn-success:active {
+    background-color: #3e8e41; /* Even darker green when pressed */
+    box-shadow: 0 2px #666; /* Lower box shadow to give a pressed effect */
+    transform: translateY(2px); /* Slight move down */
+}
