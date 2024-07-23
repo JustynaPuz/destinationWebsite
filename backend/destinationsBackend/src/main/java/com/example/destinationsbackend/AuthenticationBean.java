@@ -6,7 +6,6 @@ public class AuthenticationBean {
 
 	public AuthenticationBean(String message) {
 		this.message = message;
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getMessage() {

@@ -1,6 +1,5 @@
-package com.example.destinationsbackend;
+package com.example.destinationsbackend.helloworld;
 
-import com.example.destinationsbackend.HelloWorldBean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

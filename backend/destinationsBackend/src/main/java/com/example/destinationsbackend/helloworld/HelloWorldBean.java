@@ -1,4 +1,4 @@
-package com.example.destinationsbackend;
+package com.example.destinationsbackend.helloworld;
 
 public class HelloWorldBean {
 

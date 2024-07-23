@@ -1,0 +1,73 @@
+
+.countries-container {
+    background-size: cover; 
+    background-position: center;
+    height: 91vh; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    color: rgb(8, 8, 8);
+    text-align: center;  
+}
+
+.left-column {
+    width: 200px; 
+    background-color: #333435; /* Przykładowy kolor niebieski */
+    height:91vh;
+    overflow-y: auto;
+}
+
+.right-content {
+    width: 75%; /* Adjust the width as necessary */
+}
+
+button.btn-success-country {
+    width: 100%; /* Szerokość przycisku równa szerokości pól */
+    padding: 10px; /* Padding przycisku */
+    margin: 8px 0; /* Margines górny i dolny */
+    font-size: 20px; /* Wielkość czcionki przycisku */
+    cursor: pointer; /* Kursor wskazujący */
+    transition: background-color 0.3s; /* Animacja zmiany koloru */
+    border-radius: 4px; /* Zaokrąglenie rogów przycisku */
+    background-color: #2a9452; /* Darker shade of green when hovered */
+}
+
+button.btn-success-country:hover {
+    background-color: #2d8632; /* Darker shade of green when hovered */
+}
+
+button.btn-success-country:active {
+    background-color: #3e8e41; /* Even darker green when pressed */
+    box-shadow: 0 2px #666; /* Lower box shadow to give a pressed effect */
+    transform: translateY(2px); /* Slight move down */
+}
+
+/* Importing Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.input-field-countries {
+    width: 100%; /* Full width */
+    padding: 8px 12px; /* Padding for better text visibility */
+    margin: 8px 0; /* Margin for spacing between form elements */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+    border: 2px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: white; /* White background */
+    font-family: 'Roboto', sans-serif; /* Robust, readable font */
+    font-size: 16px; /* Sufficiently large font size for readability */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.input-field-countries:focus {
+    border-color: #4CAF50; /* Highlight effect when focused */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .input-field {
+        font-size: 14px; /* Slightly smaller font size on smaller devices */
+    }
+}
+
