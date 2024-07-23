@@ -9,6 +9,7 @@ import WelcomeComponent from './WelcomeComponent';
 import withParams from './withParams';
 import AuthenticatedRoute from './AuthenticatedRoute'
 import CountriesComponent from './CountriesComponent'
+import RegisterComponent from './RegisterComponent'
 
 class DestinationApp extends Component {
     render() {
@@ -16,6 +17,7 @@ class DestinationApp extends Component {
         const HeaderComponentWithNavigation = withNavigation(HeaderComponent);
         const WelcomeComponentWithParams = withParams(WelcomeComponent);
         const CountriesComponentWithNavigation = withNavigation(CountriesComponent)
+        const RegisterComponentWithNavigation = withNavigation(RegisterComponent)
 
             return (
                 <div className="DestinationApp">
@@ -24,6 +26,7 @@ class DestinationApp extends Component {
                 <Routes>
                     <Route path="/" element={<LoginComponentWithNavigation />} />
                     <Route path="/login" element={<LoginComponentWithNavigation />} />
+                    <Route path="/register" element={<RegisterComponentWithNavigation/>} />
                     <Route path="/welcome/:name" element={<AuthenticatedRoute><WelcomeComponentWithParams /></AuthenticatedRoute>} />
                     <Route path="/countries" element={<AuthenticatedRoute><CountriesComponentWithNavigation /></AuthenticatedRoute>} />
                     <Route path="/logout" element={<AuthenticatedRoute><LogoutComponent /></AuthenticatedRoute>} />
