@@ -1,11 +1,15 @@
 package com.example.destinationsbackend.UserCountry;
 
 import jakarta.persistence.Embeddable;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
+@Getter
+@Setter
 public class UserCountryId implements Serializable {
 
     private Long countryId;
@@ -17,23 +21,6 @@ public class UserCountryId implements Serializable {
     // Constructor with parameters
     public UserCountryId(Long countryId, Long userId) {
         this.countryId = countryId;
-        this.userId = userId;
-    }
-
-    // Getters and Setters
-    public Long getCountryId() {
-        return countryId;
-    }
-
-    public void setCountryId(Long countryId) {
-        this.countryId = countryId;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

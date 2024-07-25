@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import '../css/CountriesComponent.css';
-import CountriesListComponent from './CountriesListComponent'
+import CountriesAddingComponent from './CountriesAddingComponent';
+import CountriesListComponent from './CountriesListComponent';
 
-class CountriesComponent extends Component {
-    
-
-
+class MainComponent extends Component {
     render() {
         return (
             <div className='countries-container'>  
-            <ul className="nav flex-column left-column">
-                <CountriesListComponent></CountriesListComponent>
-                    
-                </ul>
+                <div className="left-column">
+                    <CountriesAddingComponent />
+
+                    <CountriesListComponent />
+                </div>
 
                 <div className="right-content">
+                    {/* Right content can go here */}
                 </div>
-                </div>
-
-            
+            </div>
         );
     }
 }
 
-export default CountriesComponent;
+export default MainComponent;

@@ -1,0 +1,57 @@
+/* Container for the entire component */
+.countries-list-container {
+    background-color: #f9f9f9; /* Light background color */
+
+}
+
+/* Subheader styles */
+#nested-list-subheader {
+    background-color: #333435; /* Dark background color */
+    color: white; /* White text color */
+    font-size: 1.25em; /* Slightly larger font */
+    padding: 12px 16px; /* Padding for better spacing */
+    border-bottom: 1px solid #ccc; /* Bottom border */
+}
+
+/* List item styles */
+.MuiListItemButton-root {
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.MuiListItemButton-root:hover {
+    background-color: #eee; /* Light grey on hover */
+}
+
+.MuiListItemButton-root:active {
+    background-color: #ddd; /* Darker grey when active */
+}
+
+/* Icon styles */
+.MuiListItemIcon-root {
+    min-width: 40px; /* Ensure sufficient space */
+    color: #333435; /* Darker color for icons */
+}
+
+/* Collapsible list item padding */
+.MuiListItemButton-root .MuiListItemButton-root {
+    padding-left: 32px; /* Indentation for nested items */
+}
+
+/* Expand icon styles */
+.MuiSvgIcon-root {
+    color: #333435; /* Dark color for expand icons */
+}
+
+/* Override MUI default styles to add custom styles */
+.MuiCollapse-root {
+    border-top: 1px solid #ccc; /* Top border for collapsible section */
+    background-color: #f1f1f1; /* Light grey background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .countries-list-container {
+        max-width: 100%; /* Full width on smaller screens */
+        margin: 8px; /* Reduce margin on smaller screens */
+    }
+}

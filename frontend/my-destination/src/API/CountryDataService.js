@@ -8,28 +8,23 @@ class CountryDataService {
  
      }
 
+     retriveCountry(country) {
+      return  axios.get(`${JPA_API_URL}/countries/${country}`);
+
+   }
+
      retriveAllCountriesFromContinent(continent) {
-      return  axios.get(`${JPA_API_URL}/countries/${continent}`);
+      return  axios.get(`${JPA_API_URL}/continents/countries/${continent}`);
 
    }
 
-     deleteCountry(name, id) {
-        return  axios.delete(`${JPA_API_URL}/users/${name}/countries/${id}`);
- 
-     }
-
-     retriveCountry(name, id) {
-        return  axios.get(`${JPA_API_URL}/users/${name}/countries/${id}`);
- 
-     }
-
-     updateCountry(name, id, country) {
-      return  axios.put(`${JPA_API_URL}/users/${name}/countries/${id}`, country);
-
+   saveCountry(country) {
+      return axios.post(`${JPA_API_URL}/userCountry`, country);
    }
 
-   createCountry(name, country) {
-      return  axios.post(`${JPA_API_URL}/users/${name}/countries/`, country);
+   getUserCountries(userId) {
+      return  axios.get(`${JPA_API_URL}/userCountry/${userId}`);
    }
+
 }
 export default new CountryDataService()

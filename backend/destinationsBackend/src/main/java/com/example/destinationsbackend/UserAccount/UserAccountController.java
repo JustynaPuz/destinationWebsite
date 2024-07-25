@@ -27,6 +27,8 @@ public class UserAccountController {
 
     @Autowired
     private UserAccountJpaRepository userAccountJpaRepository;
+    @Autowired
+    private UserAccountService userAccountService;
 
     @GetMapping("/jpa/users/{username}")
     public ResponseEntity<UserAccount> retrieveUserByUsername(@PathVariable String username) {
@@ -35,6 +37,17 @@ public class UserAccountController {
             return ResponseEntity.ok(userAccount);
         } else {
             return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PostMapping("/jpa/users/checkLogin")
+    public ResponseEntity<Boolean> checkLogin(@RequestBody LoginRequest loginRequest) {
+        boolean isValid = userAccountService.checkLogin(loginRequest.getUsername(), loginRequest.getPassword());
+
+        if (isValid) {
+            return ResponseEntity.ok(true);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false);
         }
     }
 //
@@ -74,7 +87,8 @@ public class UserAccountController {
 //
     @PostMapping("/jpa/users")
     public ResponseEntity<Void> createUserAccount( @RequestBody UserAccount userAccount) {
-        userAccountJpaRepository.save(userAccount);
+       // userAccountJpaRepository.save(userAccount);
+        userAccountService.saveUserAccount(userAccount);
         return ResponseEntity.ok().build();
     }
 }

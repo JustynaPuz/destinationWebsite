@@ -14,6 +14,15 @@ class UserDataService {
         return axios.post(`${JPA_API_URL}/users`, userAccount);
     }
 
+    checkLogin(loginRequest) {
+        return axios.post(`${JPA_API_URL}/users/checkLogin`, loginRequest)
+            .then(response => response.data)
+            .catch(error => {
+                console.error('Login check failed:', error);
+                throw error;
+            });
+    }
+
 
 
 //      retriveAllCountriesFromContinent(continent) {

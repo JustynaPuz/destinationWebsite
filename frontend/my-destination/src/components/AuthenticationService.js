@@ -1,13 +1,38 @@
 import axios from "axios";
+import UserDataService from "../API/UserDataService";
 
 class AuthenticationService {
 
     executeBasicAuthenticationService(username, password) {
-        return axios.get('http://localhost:8080/basicauth', {headers: {authorization: this.createbasicAuthToken(username, password)}})
+        const loginRequest = { username, password };
 
+    console.log('Login request:', loginRequest);
+
+    return UserDataService.checkLogin(loginRequest)
+        .then(isValid => {
+            console.log('Login check response:', isValid);
+            if (isValid) {
+                const authToken = this.createbasicAuthToken(username, password);
+                console.log('Auth token:', authToken);
+
+                return axios.get('http://localhost:8080/basicauth', {
+                    headers: { Authorization: authToken }
+                });
+            } else {
+                console.error('Invalid login credentials');
+                throw new Error('Invalid login credentials');
+            }
+        })
+        .then(response => {
+            console.log('Authentication successful, response:', response.data);
+            return response.data;
+        })
+        .catch(error => {
+            console.error('Authentication failed:', error);
+            throw error;
+        });
     }
 
-    
 
     createbasicAuthToken(username, password) {
         return 'Basic ' + window.btoa( username + ":" + password)
