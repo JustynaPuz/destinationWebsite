@@ -12,6 +12,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import CountryDataService from '../API/CountryDataService';
 import UserDataService from '../API/UserDataService';
 import AuthenticationService from './AuthenticationService';
+import withNavigation from './WithNavigation';
 
 class CountriesListComponent extends Component {
   constructor(props) {
@@ -28,6 +29,10 @@ class CountriesListComponent extends Component {
       ],
       countries: {} 
     };
+  }
+
+  handleCountryClick = (country) => {
+    this.props.navigate(`/countries/${country}`)
   }
 
   handleClick = async (continent) => {
@@ -89,9 +94,9 @@ class CountriesListComponent extends Component {
                 {open[continent] ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
               <Collapse in={open[continent]} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
+                <List component="div" disablePadding >
                   {countries[continent] && countries[continent].map((country) => (
-                    <ListItemButton key={country} sx={{ pl: 4 }}>
+                    <ListItemButton key={country} sx={{ pl: 4 }} onClick={() => this.handleCountryClick(country)}>
                       <ListItemText primary={country} />
                     </ListItemButton>
                   ))}
@@ -105,4 +110,4 @@ class CountriesListComponent extends Component {
   }
 }
 
-export default CountriesListComponent;
+export default withNavigation(CountriesListComponent);

@@ -10,6 +10,8 @@ import withParams from './withParams';
 import AuthenticatedRoute from './AuthenticatedRoute'
 import CountriesComponent from './CountriesComponent'
 import RegisterComponent from './RegisterComponent'
+import CountriesListComponent from './CountriesListComponent';
+import CountryComponent from './CountryComponent';
 
 class DestinationApp extends Component {
     render() {
@@ -18,6 +20,7 @@ class DestinationApp extends Component {
         const WelcomeComponentWithParams = withParams(WelcomeComponent);
         const CountriesComponentWithNavigation = withNavigation(CountriesComponent)
         const RegisterComponentWithNavigation = withNavigation(RegisterComponent)
+        const CountryComponentWithParamsAndNavigation = withNavigation(withParams(CountryComponent))
 
             return (
                 <div className="DestinationApp">
@@ -29,6 +32,7 @@ class DestinationApp extends Component {
                     <Route path="/register" element={<RegisterComponentWithNavigation/>} />
                     <Route path="/welcome/:name" element={<AuthenticatedRoute><WelcomeComponentWithParams /></AuthenticatedRoute>} />
                     <Route path="/countries" element={<AuthenticatedRoute><CountriesComponentWithNavigation /></AuthenticatedRoute>} />
+                    <Route path="/countries/:countryName" element = {<AuthenticatedRoute><CountryComponentWithParamsAndNavigation/></AuthenticatedRoute>}/>
                     <Route path="/logout" element={<AuthenticatedRoute><LogoutComponent /></AuthenticatedRoute>} />
                 </Routes>
                 <FooterComponent/>
