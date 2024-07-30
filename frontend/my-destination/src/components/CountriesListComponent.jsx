@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import '../css/CountriesListComponent.css'; 
 import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
+import '../css/LeftColumnComponent.css';
+import '../css/CountriesComponent.css';
+import '../css/CountryRightComponent.css';
+
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -78,11 +82,6 @@ class CountriesListComponent extends Component {
         <List
           component="nav"
           aria-labelledby="nested-list-subheader"
-          subheader={
-            <ListSubheader component="div" id="nested-list-subheader">
-              Continents
-            </ListSubheader>
-          }
         >
           {continents.map((continent) => (
             <div key={continent}>

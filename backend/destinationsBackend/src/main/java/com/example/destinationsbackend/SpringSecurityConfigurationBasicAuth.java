@@ -25,9 +25,9 @@ public class SpringSecurityConfigurationBasicAuth  {
                 .csrf(csrf -> csrf.disable())  // Disables CSRF protection
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/jpa/**").permitAll()
+                        .requestMatchers(("/jpa/places")).permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers(("/**")).permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(AbstractHttpConfigurer::disable)

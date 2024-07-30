@@ -1,7 +1,20 @@
 /* Container for the entire component */
 .countries-list-container {
     background-color: #f9f9f9; /* Light background color */
-
+    overflow-y: auto;
+    flex: 1 1 auto; /* Allow this section to grow and fill the available space */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    max-height: 70vh;
+    
+}
+.places-list-container {
+    overflow-y: auto;
+    flex: 1 1 auto; /* Allow this section to grow and fill the available space */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+    padding: 10px;
 }
 
 /* Subheader styles */
@@ -48,10 +61,4 @@
     background-color: #f1f1f1; /* Light grey background */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .countries-list-container {
-        max-width: 100%; /* Full width on smaller screens */
-        margin: 8px; /* Reduce margin on smaller screens */
-    }
-}
+

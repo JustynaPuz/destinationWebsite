@@ -9,23 +9,6 @@
     text-align: center;
 }
 
-.left-column {
-    width: 200px;
-    background-color: #333435;
-
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    box-sizing: border-box;
-}
-.left-column > * {
-    margin-bottom: 0; /* Removes margin between components */
-}
-.countries-container {
-    display: flex;
-    height: 90vh;
-}
-
 .MuiDrawer-paper {
     background-color: #f9f9f9;
     padding: 20px;
@@ -37,49 +20,6 @@
     margin-bottom: 16px;
 }
 
-
-.right-content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #ffffff; /* White background */
-    overflow-y: auto; /* Scrollable if content overflows */
-  }
-  
-  .country-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .country-header img {
-    width: 150px; /* Adjust size as needed */
-    height: auto;
-    border: 2px solid #ccc; /* Border for the image */
-    border-radius: 10px; /* Rounded corners for the image */
-    margin-right: 20px; /* Space between image and title */
-  }
-  
-  .country-header h1 {
-    font-size: 2em;
-    color: #333; /* Darker text color for contrast */
-  }
-  
-  .right-content p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    color: #555; /* Slightly lighter text color */
-  }
-  
-  .right-content ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .right-content ul li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #555; /* Slightly lighter text color */
-  }
 
 button.btn-success-country {
     width: 100%;
@@ -95,11 +35,34 @@ button.btn-success-country {
 }
 
 button.btn-success-country:hover {
-    background-color: #2d8632;
+    background-color: #2a9452;
 }
 
 button.btn-success-country:active {
-    background-color: #3e8e41;
+    background-color: #2a9452;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+button.btn-success-places {
+    width: 15%;
+    padding: 10px;
+    margin: 0px 0; /* Ensure no margin */
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    background-color: #2a9452;
+    color: white;
+    border: none; /* Remove default border */
+}
+
+button.btn-success-places:hover {
+    background-color: #2a9452;
+}
+
+button.btn-success-places:active {
+    background-color: #2a9452;
     box-shadow: 0 2px #666;
     transform: translateY(2px);
 }
@@ -125,23 +88,3 @@ button.btn-success-country:active {
     outline: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .countries-container {
-        flex-direction: column; /* Stack columns vertically on smaller screens */
-    }
-
-    .left-column,
-    .right-content {
-        width: 100%; /* Full width for both columns */
-        height: auto; /* Adjust height for content */
-    }
-
-    .input-field-countries {
-        font-size: 14px;
-    }
-
-    button.btn-success-country {
-        font-size: 18px;
-    }
-}

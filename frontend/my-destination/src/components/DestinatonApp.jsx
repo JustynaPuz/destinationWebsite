@@ -12,6 +12,9 @@ import CountriesComponent from './CountriesComponent'
 import RegisterComponent from './RegisterComponent'
 import CountriesListComponent from './CountriesListComponent';
 import CountryComponent from './CountryComponent';
+import PlaceAddingComponent from './PlaceAddingComponent';
+import PlaceComponent from './PlaceComponent';
+import { CssBaseline } from '@material-ui/core';
 
 class DestinationApp extends Component {
     render() {
@@ -21,6 +24,8 @@ class DestinationApp extends Component {
         const CountriesComponentWithNavigation = withNavigation(CountriesComponent)
         const RegisterComponentWithNavigation = withNavigation(RegisterComponent)
         const CountryComponentWithParamsAndNavigation = withNavigation(withParams(CountryComponent))
+        const PlaceAddingComponentWithParamsAndNavigation = withNavigation(withParams(PlaceAddingComponent))
+        const PlaceComponentWithParamsAndNavigation = withNavigation(withParams(PlaceComponent))
 
             return (
                 <div className="DestinationApp">
@@ -33,6 +38,8 @@ class DestinationApp extends Component {
                     <Route path="/welcome/:name" element={<AuthenticatedRoute><WelcomeComponentWithParams /></AuthenticatedRoute>} />
                     <Route path="/countries" element={<AuthenticatedRoute><CountriesComponentWithNavigation /></AuthenticatedRoute>} />
                     <Route path="/countries/:countryName" element = {<AuthenticatedRoute><CountryComponentWithParamsAndNavigation/></AuthenticatedRoute>}/>
+                    <Route path="/countries/:countryName/addPlace" element = {<AuthenticatedRoute><PlaceAddingComponentWithParamsAndNavigation/></AuthenticatedRoute>}/>
+                    <Route path="/countries/places/:placeName" element = {<AuthenticatedRoute><PlaceComponentWithParamsAndNavigation/></AuthenticatedRoute>}/>
                     <Route path="/logout" element={<AuthenticatedRoute><LogoutComponent /></AuthenticatedRoute>} />
                 </Routes>
                 <FooterComponent/>

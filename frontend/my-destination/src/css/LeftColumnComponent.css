@@ -1,0 +1,39 @@
+/* CountriesComponent.css */
+.countries-container-left {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .left-column {
+    width: 250px; /* Adjust as necessary */
+    display: flex;
+    flex-direction: column;
+    background-color: #333435;
+    padding: 5px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc; 
+  }
+
+.left-column > * {
+    margin-bottom: 0; /* Removes margin between components */
+} 
+  
+  .countries-adding {
+    flex: 0 0 auto; /* Do not grow or shrink */
+    margin-bottom: 20px;
+  }
+  .continents-title {
+    font-size: 30px;
+    color:white
+  }
+  
+  .countries-list {
+    flex: 1 1 auto; /* Allow this section to grow and fill the available space */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+  }
+  .list-subheader {
+    background-color: inherit;
+  }

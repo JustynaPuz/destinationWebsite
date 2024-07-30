@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/CountriesComponent.css';
+import '../css/LeftColumnComponent.css';
 import CountryDataService from '../API/CountryDataService';
 import AuthenticationService from './AuthenticationService';
 import UserDataService from '../API/UserDataService';
@@ -85,8 +85,8 @@ class CountriesAddingComponent extends Component {
     render() {
         const { selectedContinent, countries, selectedCountry, showInputs } = this.state;
         return (
-            <div className='countries-container'>  
-            <ul className="nav flex-column left-column">
+            <div className='countries-adding'>  
+        
                 <button  className="btn btn-success-country"  onClick={this.handleAddCountry} >Add country</button>
                 
                 {showInputs && (
@@ -113,7 +113,7 @@ class CountriesAddingComponent extends Component {
                 )
                 }
                     
-                </ul>
+            
 
                 </div>
 

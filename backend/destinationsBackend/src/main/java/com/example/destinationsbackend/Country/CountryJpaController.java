@@ -51,42 +51,5 @@ public class CountryJpaController {
         // return countryService.findAll();
 
     }
-//
-//    @GetMapping("/jpa/users/{username}/countries/{id}")
-//    public Country getCountry(@PathVariable String username,  @PathVariable long id) {
-//        return countryJpaRepository.findById(id).get();
-//       // return countryService.findById(id);
-//
-//    }
-//
-//    @DeleteMapping("/jpa/users/{username}/countries/{id}")
-//    public ResponseEntity<Void> deleteCountry(@PathVariable String username, @PathVariable long id) {
-//
-//        Country todo = countryService.deleteById(id);
-//        if(todo != null) {
-//            return ResponseEntity.noContent().build();
-//        }
-//        return ResponseEntity.notFound().build();
-//
-//    }
-//
-//    @PutMapping("/jpa/users/{username}/countries/{id}")
-//    public ResponseEntity<Country> updateCountry(@PathVariable String username, @PathVariable long id, @RequestBody Country country) {
-//
-//        Country todoUpdated = countryService.save(country);
-//
-//        return new ResponseEntity<Country>(country, HttpStatus.OK );
-//
-//    }
-//
-//    @PostMapping("/jpa/users/{username}/countries")
-//    public ResponseEntity<Void> createCountry(@PathVariable String username, @RequestBody Country country) {
-//
-//        Country createdTodo = countryService.save(country);
-//
-//        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdTodo.getId()).toUri();
-//
-//        return ResponseEntity.created(uri).build();
-//
-//    }
+
 }

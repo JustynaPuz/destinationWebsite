@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import CountryDataService from '../API/CountryDataService';
 import '../css/CountriesComponent.css';
-import CountriesAddingComponent from './CountriesAddingComponent';
-import CountriesListComponent from './CountriesListComponent';
+import LeftColumnComponent from './LeftColumnComponent';
+import ListOfPlacesComponent from './ListOfPlacesComponent';
+import { Button } from '@material-ui/core';
 
 class CountryComponent extends Component {
   constructor(props) {
@@ -27,36 +28,32 @@ class CountryComponent extends Component {
     }
   }
 
+  handleAddPlace(country) {
+    this.props.navigate(`/countries/${country}/addPlace`);
+  }
+
   render() {
     const { country } = this.state;
     return (
-      <div className="countries-container">
-        <div className="left-column">
-          <CountriesAddingComponent />
-          <CountriesListComponent />
+      <div className='countries-container' >
+        <div className='left-column'>
+          <LeftColumnComponent />
         </div>
-        <div className="right-content">
+        <div className='right-content'>
           <div className="country-header">
-            <img src="/images/Egypt.jpg" alt={`${country.name}`} className="country-image" />
             <h1>{country.name}</h1>
+            <img src={`/images/${country.name}.jpg`} alt={`${country.name}`} className="country-image" />
           </div>
-          <p className="country-description">Description: {country.description}</p>
-          <h2>List of places</h2>
-          <div className="places-list">
-            {/* Add list of places here */}
-            <ul>
-              <li>Place 1</li>
-              <li>Place 2</li>
-              <li>Place 3</li>
-              {/* Add more places as needed */}
-            </ul>
+          <div className="country-description">Description: {country.description}</div>
+          <div className="list-places-header">
+            <Button className="btn btn-success-places" onClick={() => this.handleAddPlace(country.name)}>Add</Button>
+            <h2>List of places</h2>
           </div>
-          <p>Population: {country.population}</p>
-          <p>Region: {country.region}</p>
+          <ListOfPlacesComponent countryName={country.name} country={country} />
         </div>
       </div>
     );
   }
 }
 
-export default CountryComponent;
+export default CountryComponent; 
