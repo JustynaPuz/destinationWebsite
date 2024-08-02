@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../css/CountriesComponent.css';
-import CountriesAddingComponent from './CountriesAddingComponent';
-import CountriesListComponent from './CountriesListComponent';
 import LeftColumnComponent from './LeftColumnComponent';
 
 class MainComponent extends Component {
@@ -13,7 +11,14 @@ class MainComponent extends Component {
                 </div>
 
                 <div className="right-content">
-                    {/* Right content can go here */}
+                    <div className="image-grid">
+                        <img src="images/antartica.jpg" alt="Image 1" className="grid-image"/>
+                        <img src="images/desert.jpg" alt="Image 2" className="grid-image"/>
+                        <img src="images/field.jpg" alt="Image 3" className="grid-image"/>
+                        <img src="images/mountains.jpg" alt="Image 4" className="grid-image"/>
+                        <img src="images/lake.jpg" alt="Image 5" className="grid-image"/>
+                        <img src="images/jungle.jpg" alt="Image 6" className="grid-image"/>
+                    </div>
                 </div>
             </div>
         );
@@ -21,3 +26,4 @@ class MainComponent extends Component {
 }
 
 export default MainComponent;
+

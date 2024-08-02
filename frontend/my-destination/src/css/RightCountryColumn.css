@@ -1,0 +1,26 @@
+.countries-container-right {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+
+}
+
+.right-country-column {
+    width: 350px; /* Adjust as necessary */
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc; 
+
+}
+
+.country-map {
+    height: 400px;
+}
+.country-image {
+    align-self: center;
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  

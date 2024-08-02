@@ -50,41 +50,7 @@ public class UserAccountController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false);
         }
     }
-//
-//    @GetMapping("/jpa/countries/{continent}")
-//    public List<Country> getAllCountriesFromContinent( @PathVariable String continent) {
-//        return countryJpaRepository.findCountriesByContinent(continent);
-//        // return countryService.findAll();
-//
-//    }
-//
-//    @GetMapping("/jpa/users/{username}/countries/{id}")
-//    public Country getCountry(@PathVariable String username,  @PathVariable long id) {
-//        return countryJpaRepository.findById(id).get();
-//        // return countryService.findById(id);
-//
-//    }
-//
-//    @DeleteMapping("/jpa/users/{username}/countries/{id}")
-//    public ResponseEntity<Void> deleteCountry(@PathVariable String username, @PathVariable long id) {
-//
-//        Country todo = countryService.deleteById(id);
-//        if(todo != null) {
-//            return ResponseEntity.noContent().build();
-//        }
-//        return ResponseEntity.notFound().build();
-//
-//    }
-//
-//    @PutMapping("/jpa/users/{username}/countries/{id}")
-//    public ResponseEntity<Country> updateCountry(@PathVariable String username, @PathVariable long id, @RequestBody Country country) {
-//
-//        Country todoUpdated = countryService.save(country);
-//
-//        return new ResponseEntity<Country>(country, HttpStatus.OK );
-//
-//    }
-//
+
     @PostMapping("/jpa/users")
     public ResponseEntity<Void> createUserAccount( @RequestBody UserAccount userAccount) {
        // userAccountJpaRepository.save(userAccount);

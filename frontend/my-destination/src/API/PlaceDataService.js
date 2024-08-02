@@ -12,6 +12,10 @@ class PlaceDataService {
  
      }
 
+     retrivePlacesByUserId(userId) {
+      return axios.get(`${JPA_API_URL}/places/${userId}`)
+     }
+
    deletePlaceById(id) {
       return  axios.delete(`${JPA_API_URL}/places/${id}`);
    }

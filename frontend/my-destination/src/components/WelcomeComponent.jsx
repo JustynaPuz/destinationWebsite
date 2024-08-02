@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Link} from 'react-router-dom'
 import HelloWorldService from '../API/HelloWorldService'
 import '../css/WelcomeComponent.css';
 

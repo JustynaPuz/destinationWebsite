@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import '../css/CountriesListComponent.css'; 
-import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
-import '../css/LeftColumnComponent.css';
-import '../css/CountriesComponent.css';
-import '../css/CountryRightComponent.css';
-
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -36,7 +31,7 @@ class CountriesListComponent extends Component {
   }
 
   handleCountryClick = (country) => {
-    this.props.navigate(`/countries/${country}`)
+    this.props.navigate(`/countries/${country}`);
   }
 
   handleClick = async (continent) => {
@@ -49,40 +44,32 @@ class CountriesListComponent extends Component {
 
     // Fetch countries for the continent if not already fetched
     if (!this.state.countries[continent]) {
-    //  const response = await CountryDataService.retriveAllCountriesFromContinent(continent);
+      const username = AuthenticationService.getLoggedInUsername();
+      const user = await UserDataService.retriveUserByUsername(username);
+      const userId = user.data.id;
 
-    const username = AuthenticationService.getLoggedInUsername();
-    
-    const user = await UserDataService.retriveUserByUsername(username);
-    const userId = user.data.id;
-
-    const response = await CountryDataService.getUserCountries(userId)
-    console.log("response:", response);
+      const response = await CountryDataService.getUserCountries(userId);
 
       // Filter countries by the clicked continent and map to names
-    const countryNames = response.data
-    .filter(country => country.continent === continent) // Ensure filtering by continent
-    .map(country => country.name);
-  console.log("names:", countryNames);
+      const countryNames = response.data
+        .filter(country => country.continent === continent)
+        .map(country => country.name);
 
-  // Update the state with the new countries for the continent
-  this.setState(prevState => ({
-    countries: {
-      ...prevState.countries,
-      [continent]: countryNames
+      // Update the state with the new countries for the continent
+      this.setState(prevState => ({
+        countries: {
+          ...prevState.countries,
+          [continent]: countryNames
+        }
+      }));
     }
-  }));
-}
-};
+  };
 
   render() {
     const { open, continents, countries } = this.state;
     return (
       <div className="countries-list-container">
-        <List
-          component="nav"
-          aria-labelledby="nested-list-subheader"
-        >
+        <List component="nav" aria-labelledby="nested-list-subheader">
           {continents.map((continent) => (
             <div key={continent}>
               <ListItemButton onClick={() => this.handleClick(continent)}>
@@ -93,7 +80,7 @@ class CountriesListComponent extends Component {
                 {open[continent] ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
               <Collapse in={open[continent]} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding >
+                <List component="div" disablePadding>
                   {countries[continent] && countries[continent].map((country) => (
                     <ListItemButton key={country} sx={{ pl: 4 }} onClick={() => this.handleCountryClick(country)}>
                       <ListItemText primary={country} />

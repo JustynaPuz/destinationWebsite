@@ -1,0 +1,11 @@
+.map-container {
+    height: 90vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  position: absolute; /* Ensure it occupies the entire screen */
+  align-self: center;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  }

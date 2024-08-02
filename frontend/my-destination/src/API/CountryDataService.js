@@ -5,17 +5,14 @@ class CountryDataService {
 
     retriveAllCountries(name) {
         return  axios.get(`${JPA_API_URL}/users/${name}/countries`);
- 
      }
 
      retriveCountry(country) {
       return  axios.get(`${JPA_API_URL}/countries/${country}`);
-
    }
 
      retriveAllCountriesFromContinent(continent) {
-      return  axios.get(`${JPA_API_URL}/continents/countries/${continent}`);
-
+      return  axios.get(`${JPA_API_URL}/continents/${continent}`);
    }
 
    saveCountry(country) {

@@ -4,6 +4,7 @@ import '../css/CountryRightComponent.css';
 import '../css/LeftColumnComponent.css';
 import LeftColumnComponent from './LeftColumnComponent';
 import withLocation from './withLocation';
+import RightPlaceColumn from './RightPlaceColumn';
 
 class PlaceComponent extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class PlaceComponent extends Component {
             </ul>
           </div>
         </div>
+        <RightPlaceColumn place={place} className='right-country-column' />
       </div>
     );
   }
