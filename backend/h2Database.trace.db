@@ -1322,3 +1322,83 @@ Wrong user name or password [28000-224]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 93 more
+2024-08-04 20:00:22.669171+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara  is a desert spanning across North Africa. With an area of 9,200,000... (264)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara  is a desert spanning across North Africa. With an area of 9,200,000... (264)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:00:25.972736+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara  is a desert spanning across North Africa. With an area of 9,200,000... (264)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara  is a desert spanning across North Africa. With an area of 9,200,000... (264)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:00:30.943731+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara  is a desert spanning across North Africa. With an area of 9,200,000... (264)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara  is a desert spanning across North Africa. With an area of 9,200,000... (264)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:11.367144+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:12.272997+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:12.452548+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:12.618696+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:13.782164+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:13.945494+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:14.097413+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:14.256789+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:14.419175+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:14.573813+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:14.729812+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:20.146609+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:20.843140+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The Sahara (/s\\0259\\02c8h\\0251\\02d0r\\0259/, /s\\0259\\02c8h\\00e6r\\0259/) is a d... (297)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:41.269326+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:41.269326+02:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:01:52.927042+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]
+2024-08-04 20:03:22.168077+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Wartość za długa dla kolumny "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"
+Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'The Sahara is a desert spanning across North Africa. With an area of 9,200,000 ... (273)"; SQL statement:
+insert into place (country_name,description,image_url,latitude,longitude,name,user_id,id) values (?,?,?,?,?,?,?,default) [22001-224]

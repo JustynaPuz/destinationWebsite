@@ -27,9 +27,15 @@ const MapUpdater = ({ center }) => {
 const RightPlaceColumn = ({ place }) => {
   const position = [place.latitude, place.longitude]; 
 
+  console.log("Image url", place.imageUrl)
+  const imageUrl = `http://localhost:8080${place.imageUrl}`;
+
+
   return (
     <div className = "countries-container-right">
          <div className="right-country-column">
+
+         <img src={imageUrl} alt={`${place.name}`} className="place-image" />
     
       <div className="country-map">
         <h2>Place Location</h2>

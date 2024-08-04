@@ -16,7 +16,7 @@ class ListOfPlacesComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      places: [] 
+      places: []
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -30,7 +30,7 @@ class ListOfPlacesComponent extends Component {
       const userId = user.data.id;
       const { countryName } = this.props;
       const response = await PlaceDataService.retrivePlacesByUserIdAndCountryName(userId, countryName);
-      
+
       // Ensure response data is an array
       if (Array.isArray(response.data)) {
         this.setState({ places: response.data });
@@ -40,7 +40,7 @@ class ListOfPlacesComponent extends Component {
       }
     } catch (error) {
       console.error('Error fetching places data', error);
-      this.setState({ places: [] });  // Set an empty array on error to prevent .map error
+      this.setState({ places: [] }); // Set an empty array on error to prevent .map error
     }
   }
 
@@ -58,7 +58,8 @@ class ListOfPlacesComponent extends Component {
     this.props.navigate(`/countries/places/${place.name}`, { state: { place } });
   }
 
-  handleDelete = async (placeId) => {
+  handleDelete = async (e, placeId) => {
+    e.stopPropagation(); // Prevent the click event from propagating to parent elements
     console.log("Id", placeId);
     try {
       await PlaceDataService.deletePlaceById(placeId);
@@ -82,10 +83,10 @@ class ListOfPlacesComponent extends Component {
                     <PlaceIcon />
                   </ListItemIcon>
                   <ListItemText primary={place.name} className="list-item-text" />
-                  <IconButton 
-                    edge="end" 
-                    aria-label="delete" 
-                    onClick={() => this.handleDelete(place.id)}>
+                  <IconButton
+                    edge="end"
+                    aria-label="delete"
+                    onClick={(e) => this.handleDelete(e, place.id)}>
                     <DeleteIcon />
                   </IconButton>
                 </ListItemButton>

@@ -25,6 +25,7 @@ public class SpringSecurityConfigurationBasicAuth  {
                 .csrf(csrf -> csrf.disable())  // Disables CSRF protection
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/jpa/**").permitAll()
+                        .requestMatchers("/**").permitAll()
                         .requestMatchers(("/jpa/places")).permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
@@ -32,7 +33,6 @@ public class SpringSecurityConfigurationBasicAuth  {
                 )
                 .headers(AbstractHttpConfigurer::disable)
                 .httpBasic(withDefaults());
-                //.userDetailsService(userDetailsService);
         return http.build();
     }
 

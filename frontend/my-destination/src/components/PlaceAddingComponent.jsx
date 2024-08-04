@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid'; // Import UUID library
 import AuthenticationService from './AuthenticationService';
 import '../css/PlaceAdding.css';
 import UserDataService from '../API/UserDataService';
@@ -23,12 +24,10 @@ class PlaceAddingComponent extends Component {
       showSuccessMessage: false,
       errors: {},
       selectedFile: null
-      
     };
     this.handleChange = this.handleChange.bind(this);
     this.confirmClicked = this.confirmClicked.bind(this);
     this.handleFileChange = this.handleFileChange.bind(this);
-    this.uploadFile = this.uploadFile.bind(this);
   }
 
   fetchPlaceData = async () => {
@@ -49,25 +48,51 @@ class PlaceAddingComponent extends Component {
       console.error("Error fetching country data", error);
     }
   }
+
   handleFileChange(event) {
-    this.setState({ selectedFile: event.target.files[0] });
+    const file = event.target.files[0];
+    this.setState({ selectedFile: file });
   }
 
   uploadFile = async () => {
+    const { selectedFile, countryName, nameOfPlace } = this.state;
+    const uniqueId = uuidv4(); // Generate a unique ID
+    const timestamp = Date.now(); // Get current timestamp
+
+    const fileName = `${countryName}_${nameOfPlace}_${timestamp}_${uniqueId}.jpg`; // Generate unique file name
+
     const formData = new FormData();
-    formData.append("file", this.state.selectedFile);
+    formData.append("file", selectedFile);
+    formData.append("fileName", fileName);
+
+    console.log("Uploading file with the following details:");
+    console.log("File Name:", fileName);
+    console.log("Form Data:", formData);
+
     try {
-      const response = await fetch('URL_TO_YOUR_UPLOAD_API', {
+      const response = await fetch('http://localhost:8080/filePlaceUpload', { // Adjust this URL to your backend endpoint
         method: 'POST',
         body: formData,
       });
+
+      console.log("Server response:", response);
+      if (!response.ok) throw new Error("File upload failed");
+
       const data = await response.json();
-      this.setState({ imageURL: data.url });
+      console.log("Response data:", data);
+
+      if (data && data.fileName) {
+        const imageUrl = `/uploads/${data.fileName}`; // Construct the full URL
+        return imageUrl;
+      } else {
+        console.error("Response data does not contain 'fileName' field");
+        return null;
+      }
     } catch (error) {
       console.error("Error uploading file", error);
+      return null;
     }
   }
-  
 
   componentDidMount() {
     this.fetchPlaceData();
@@ -82,7 +107,7 @@ class PlaceAddingComponent extends Component {
   }
 
   validateForm = () => {
-    const { nameOfPlace, description, latitude, longitude, imageURL } = this.state;
+    const { nameOfPlace, description, latitude, longitude } = this.state;
     const errors = {};
     if (!nameOfPlace) errors.nameOfPlace = "Name of place is required";
     if (!description) errors.description = "Description is required";
@@ -94,9 +119,15 @@ class PlaceAddingComponent extends Component {
 
   confirmClicked = async () => {
     if (!this.validateForm()) return;
-    await this.uploadFile();
 
-    const { nameOfPlace, countryName, description, latitude, longitude, userId, imageURL } = this.state;
+    const imageURL = await this.uploadFile();
+    if (!imageURL) {
+      console.error("Failed to upload image, aborting place creation");
+      return;
+    }
+
+    const { nameOfPlace, countryName, description, latitude, longitude, userId } = this.state;
+    console.log("url", imageURL)
 
     const place = {
       name: nameOfPlace,
@@ -127,7 +158,7 @@ class PlaceAddingComponent extends Component {
 
   render() {
     const { errors, showSuccessMessage, latitude, longitude, country } = this.state;
-    const position = [country.latitude, country.longitude]; 
+    const position = [country.latitude, country.longitude];
     console.log("Position", position)
 
     const MapClickHandler = () => {
@@ -168,31 +199,29 @@ class PlaceAddingComponent extends Component {
           <div>
             Upload Image:
             <input type="file" onChange={this.handleFileChange} />
-            <button onClick={this.uploadFile}>Upload</button>
           </div>
           <button className="btn btn-success" onClick={this.confirmClicked}>Confirm</button>
-          
         </div>
         <div className='right-place-adding-column'>
-            <div style={{ height: '400px', marginTop: '20px' }}>
-              {country.latitude && country.longitude && (
-                <MapContainer center={position} zoom={5} style={{ height: '100%', width: '100%' }}>
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  {latitude && longitude && (
-                    <Marker position={[latitude, longitude]}>
-                      <Popup>
-                        {this.state.nameOfPlace}
-                      </Popup>
-                    </Marker>
-                  )}
-                  <MapClickHandler />
-                </MapContainer>
-              )}
-            </div>
+          <div style={{ height: '400px', marginTop: '20px' }}>
+            {country.latitude && country.longitude && (
+              <MapContainer center={position} zoom={5} style={{ height: '100%', width: '100%' }}>
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+                {latitude && longitude && (
+                  <Marker position={[latitude, longitude]}>
+                    <Popup>
+                      {this.state.nameOfPlace}
+                    </Popup>
+                  </Marker>
+                )}
+                <MapClickHandler />
+              </MapContainer>
+            )}
           </div>
+        </div>
       </div>
     );
   }

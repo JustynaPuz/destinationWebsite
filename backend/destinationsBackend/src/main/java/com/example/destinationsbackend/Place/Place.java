@@ -1,5 +1,6 @@
 package com.example.destinationsbackend.Place;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +22,8 @@ public class Place {
     private String name;
     private String countryName;
     private Long userId;
+
+    @Column(columnDefinition = "TEXT")
     private String description;
     private Double latitude;
     private Double longitude;

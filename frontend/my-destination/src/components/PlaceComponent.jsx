@@ -24,9 +24,6 @@ class PlaceComponent extends Component {
         <div className="right-content">
           <div className="place-header">
             <h1>{place.name}</h1>
-            {/* {place.imageUrl && (
-              <img src={place.imageUrl} alt={place.name} className="place-image" />
-            )} */}
           </div>
           <div className="place-description">
             <h2>Description</h2>
